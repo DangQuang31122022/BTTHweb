@@ -6,55 +6,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bai 6</title>
     <style>
-        td, table {
+        table, th, td {
+            margin: 0 auto 10px;
             border: solid black;
             border-collapse: collapse;
         }
-        table {
-            margin: 0 auto;
-            width: 50%;
+        table#a {
+            border-color: black;
+            width: 30%;
             text-align: center;
         }
-        #o1 {
+        .a1 {
             background-color: orange;
         }
-        #o2 {
+        .a2 {
             background-color: yellow;
+        }
+        table#b {
+            background-color: rgb(231, 163, 36); 
+            width: 25%;
+            text-align: left;
+            text-decoration: underline;
+            color: brown; 
+        }
+        table#c {
+            background-color: rgb(204, 142, 190);
+        }
+        .header {
+            background-color: blueviolet;
+        }
+        .so {
+            background-color: aqua;
         }
     </style>
 </head>
 <body>
-    <table>
-        <tr>
+    <!--CÂU A-->
+    <table id="a">
+        <t>
             <td>1</td>
             <td colspan="4">2</td>
         </tr>
         <tr>
             <td rowspan="3">3</td>
-            <td id="o1">4</td>
-            <td id="o1">5</td>
-            <td id="o2" rowspan="2" colspan="2">6</td>
+            <td class="a1">4</td>
+            <td class="a1">5</td>
+            <td class="a2" rowspan="2" colspan="2">6</td>
         </tr>
         <tr>
-            <td id="o1">7</td>
-            <td id="o1">8</td>
+            <td class="a1">7</td>
+            <td class="a1">8</td>
         </tr>
         <tr>
-            <td id="o2" colspan="2">9</td>
-            <td id="o2">10</td>
+            <td class="a2" colspan="2">9</td>
+            <td class="a2">10</td>
         </tr>
     </table>
 
-    <table>
+    <!--CÂU B_1-->
+    <table id="b">
         <tr>
-          <td><a href="#section1">Phần 1: Giới thiệu</a></td>
+            <td>(1)</td>
+            <td>(2)</td>
+            <td>(3)</td>
+            <td colspan="3">(4)</td>
+            <td>(5)</td>
         </tr>
         <tr>
-          <td><a href="#section2">Phần 2: Đặc điểm</a></td>
+            <td></td>
+            <td colspan="5">Part I</td>
+            <td></td>
         </tr>
         <tr>
-          <td><a href="#section3">Phần 3: Ứng dụng</a></td>
+            <td colspan="2"></td>
+            <td colspan="4">Chapter 1</td>
         </tr>
-      </table>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section A</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section B</td>
+            <td></tr>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="4">Chapter 2</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section A</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section B</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="5">Part II</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="4">Chapter 3</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section A</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section B</td>
+            <td></td>
+        </tr>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="4">Chapter 4</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section A</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="3">Section B</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!--CÂU C-->
+    <table id="c">
+        <caption>NUMBER 1-5 in VARIOUS LANGUAGES</caption>
+        <tr class="header">
+            <th style="background-color: rgb(204, 142, 190);"></th>
+            <th>English</th>
+            <th>Esspanol</th>
+            <th>Francais</th>
+            <th>Italiano</th>
+            <th>Deutsch</th>
+        </tr>
+        <tr>
+            <td class="so">1</td>
+            <td>one</td>
+            <td>uno</td>
+            <td>un</td>
+            <td>uno</td>
+            <td>eins</td>
+        </tr>
+        <tr>
+            <td class="so">2</td>
+            <td>two</td>
+            <td>dos</td>
+            <td>deux</td>
+            <td>due</td>
+            <td>zwei</td>
+        </tr>
+        <tr>
+            <td class="so">3</td>
+            <td>three</td>
+            <td>tres</td>
+            <td>trois</td>
+            <td>tre</td>
+            <td>drei</td>
+        </tr>
+        <tr>
+            <td class="so">4</td>
+            <td>four</td>
+            <td>quatro</td>
+            <td>quatre</td>
+            <td>quattro</td>
+            <td>vier</td>
+        </tr>
+        <tr>
+            <td class="so">5</td>
+            <td>five</td>
+            <td>cinco</td>
+            <td>cinq</td>
+            <td>cinque</td>
+            <td>fünf</td>
+        </tr>
+    </table>
 </body>
 </html>
