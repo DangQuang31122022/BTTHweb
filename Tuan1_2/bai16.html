@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 16</title>
+</head>
+<body>
+    <!-- Travel reservation form-->
+    <h1>Travel reservation form</h1>
+    <h2>* denotes mandotory</h2>
+    <form action="bai16.php" method="post">
+        <label for="full_name">Full name: </label> <br>
+        <input type="text" name="full_name" id="full_name" placeholder="FirstName LastName"> <br>
+        <label for="email">Email address:</label> <br>
+        <input type="email" name="email" id="email" placeholder="EMAIL_ADDRESS"> <br>
+        <label for="selectTour">Select tour package:</label> <br>
+        <select name="selectTour" id="selectTour"> 
+            <option value="1">Tour 1</option>
+            <option value="2">Tour 2</option>
+            <option value="3">Tour 3</option>
+        </select> <br>
+        <label for="arrivalDate">Arrival date:</label> <br>
+        <input type="text" name="arrivalDate" id="arrivalDate" placeholder="m/d/y"> <br>
+        <label for="number">Number of person:</label> <br>
+        <input type="text" name="number" id="number" placeholder="Number of people"> <br>
+        <label>What would you want to avail?</label> <br>
+        <input type="checkbox" name="check[]"  value="Boarding">Boarding <br>
+        <input type="checkbox" name="check[]" id="check" value="Fooding">Fooding <br>
+        <label for="discount">Discout Coupon code:</label> <br>
+        <input type="text" name="discount" id="discount" placeholder="unknow type"> <br>
+        <label>Term and conditions</label> <br>
+        <input type="radio" name="radio[]" id="radio1" value="agree">I agree 
+        <input type="radio" name="radio[]" id="radio2" value="disagree">I disagree <br>
+        <input type="submit" value="Complete reservation">
+</body>
+</html>
