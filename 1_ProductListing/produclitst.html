@@ -7,11 +7,16 @@
     <title>Product List</title>
     <style>
         .navbar{
+            position: fixed;
+            width: 100%;
+            min-height: 60px;
+            top: 0;
+            padding-top: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: space-around;
-            min-height: 60px;
-            background-color: #fff;
         }
         .menu{
             display: inline-block;
@@ -20,9 +25,8 @@
         .menu-item{
             display: inline-block;
             list-style: none;
-            margin-left: 10px;
-            font-size: 10px;
-            font-weight: bold;
+            margin-left: 27px;
+            font-size: 17px;
         }
         .search{
             display: flex;
@@ -36,6 +40,23 @@
             border: 1px solid #000;
             padding: 5px;
         }
+        .product-classification_Sort {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .classification{
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+        .classification-item{
+            display: flex;
+            background: #459D7AFF;
+            font-size: 18px;
+            color: #fff;
+            padding: 5px;
+        }
         .product-list{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -43,6 +64,7 @@
         }
         .product-classification_Sort {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
         }
@@ -60,11 +82,11 @@
             </ul>
         </nav>
         <div class="logo">
-            <img src="image/logo.png" width="150px">
+            <img src="image/logo.png" width="145px">
         </div>
         <div class="search">
-            <input type="search" name="find"- id="find" placeholder="Search product ...">
-            <img src="image/Button 1 (1).png" alt="">
+            <input type="search" name="find" id="find" placeholder="Search product ...">
+            <img src="image/Button 1 (1).png" alt="" > 
             <img src="image/Button 1.png" alt="">
         </div>
     </div>
@@ -75,9 +97,9 @@
     <!-- Product sort, classification-->
     <div class="product-classification_Sort">
         <ul class="classification">
-            <li class="classification-item"><button>All Products</button></li>
-            <li class="classification-item"><button>Face</button></li>
-            <li class="classification-item"><button>Body</button></li>
+            <li><button class="classification-item">All Products</button></li>
+            <li><button class="classification-item">Face</button></li>
+            <li><button class="classification-item">Body</button></li>
         </ul>
         <div>
             <input type="search">
