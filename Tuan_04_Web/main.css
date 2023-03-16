@@ -26,16 +26,76 @@ body {
     padding-inline-start: 5px;
     display: inline-block;
     text-align: center;
-    
 }
 .menu__left li {
-    /* display: block; */
     padding: 18px;
-    
-    /* margin-bottom: 15px; */
 }
-.center__container  {
-    margin-left: 100px;
+/* Center */
+.center-content  {
+    margin-left: 120px;
+    display: flex;
+    flex-direction: column;    
+    margin-right: 10px;
+}
+.title__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title__content .time-box {
+    width: 70px;
+    height: 25px;
+    border: 2px solid red;
+    border-radius: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.title__content .little-cirle {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.date__infor {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.date__infor .interval {
+    margin-right:  10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: solid red 1px;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+}
+.screen-meeting {
+    display: flex;
+     flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.screen-meeting .img__sub {
+    display: flex;
+    justify-content: space-between;
+}
+.control__bar {
+    display: flex;
+    justify-content: center;
+}
+.control__bar img {
+    margin-left: 15px;
+}
+.control__bar button {
+    background-color: red;
+    border-radius: 5px;
+    font-weight: 800;
+    margin-left: 15px;
 }
 .right__container {
     display: flex;
@@ -43,10 +103,126 @@ body {
     align-items: flex-start;
     right: 0;
 }
-.right__container > ul {
-    list-style: none;
-    margin-left: 0px;
-    padding-inline-start: 5px;
-    display: inline-block;
-    text-align: center;
+.right_screen{
+    width: 500px;
+}
+.parti_area{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.top_parti{
+    display: flex;
+    justify-content: space-between;
+}
+#participant{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight: 100;
+    margin-left: 20px;
+}
+#add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 30px;
+    border: 2px rgb(251, 110, 136) solid;
+    border-radius: 10px;
+    color: rgb(252, 75, 104);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.per_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#user_avt_1>p{
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+#icon_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.per_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#chat{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight: 100;
+    margin-left: 20px;
+}
+#texting{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.onl_txt {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+}
+.onl_txt >img{
+    width: 36px;
+    height: 36px;
+}
+.onl_txt >p{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.onl_txt >.time_chat{
+    color: rgb(151, 151, 151);
+}
+.text_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    margin-left: 10%;
+    width: 80%;
+    height: 60px;
+}
+.typing_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.typing_box >input{
+    width: 350px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: rgb(233, 233, 233);
+    border: none;
+}
+.typing_box >img{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 30px;
 }
