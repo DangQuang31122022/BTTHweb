@@ -112,3 +112,22 @@ button + button {
     padding: 12px;
     color: white;
 }
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.review__title {
+    /* text-align: left; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.review__mess {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.review_mess-item-person {
+    display: flex;
+    
+}
