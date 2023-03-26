@@ -131,3 +131,24 @@ button + button {
     display: flex;
     
 }
+.relative_product {
+    display: flex;
+    justify-content: space-around;
+}
+.relative_product-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.relative_product-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.relative_product-item {
+    display: flex;
+    flex-direction: column;
+    border: #fff 5px solid;
+    margin: 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
