@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP WATCH</title>
+</head>
+<body>
+    <SCript>
+        // STOP WATCH
+        function startTime() {
+            var hour = document.getElementById("hour");
+            var minute = document.getElementById("minute");
+            var second = document.getElementById("second");
+            var millisecond = document.getElementById("millisecond");
+            var h = parseInt(hour.innerHTML);
+            var m = parseInt(minute.innerHTML);
+            var s = parseInt(second.innerHTML);
+            var ms = parseInt(millisecond.innerHTML);
+            ms++;
+            if (ms == 100) {
+                ms = 0;
+                s++;
+            }
+            if (s == 60) {
+                s = 0;
+                m++;
+            }
+            if (m == 60) {
+                m = 0;
+                h++;
+            }
+            hour.innerHTML = h;
+            minute.innerHTML = m;
+            second.innerHTML = s;
+            millisecond.innerHTML = ms;
+        }
+        var star;
+        function start() {
+            star = setInterval(startTime, 10);
+        }
+        // handle event stop 
+        function stop() {
+            clearInterval(star);
+        }
+        // handle event clear watch
+        function clearWatch() {
+            var hour = document.getElementById("hour");
+            var minute = document.getElementById("minute");
+            var second = document.getElementById("second");
+            var millisecond = document.getElementById("millisecond");
+            hour.innerHTML = 0;
+            minute.innerHTML = 0;
+            second.innerHTML = 0;
+            millisecond.innerHTML = 0;
+        }
+    </SCript>
+    <!-- TIME -->
+    <div id="times">
+        <span id="hour">0</span>:
+        <span id="minute">0</span>:
+        <span id="second">0</span>:
+        <span id="millisecond">0</span>
+    </div>
+    <!-- START -->
+    <button id="start" onclick="start();" >START</button>
+    <!-- RESET -->
+    <button id="reset" onclick="stop();">STOP</button>
+    <!-- CLEAR -->
+    <button id="clear" onclick="clearWatch();">CLEAR</button>
+</body>
+</html>
