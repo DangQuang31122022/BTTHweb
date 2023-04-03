@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+        .calculator__body {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .button {
+            padding: 10px 15px;
+        }
+        .text {
+            width: 99%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+    </script>
+    <div class="calculator">
+        <div class="calculator__header">
+            <div class="calculator__header-result">
+
+            </div>
+            <input type="text" class="text">
+        </div>
+        <div class="calculator__body">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="clear button">AC</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="add button">+</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="substract button">-</button>
+            <button class="mul button">*</button>
+            <button class="button">0</button>
+            <button class="divide button">/</button>
+            <button class="cal button">=</button>
+        </div>
+    </div>
+</body>
+</html>
