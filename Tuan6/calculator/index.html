@@ -11,6 +11,9 @@
             flex-direction: column;
             width: 40%;
         }
+        .calculator__header-result {
+            
+        }
         .calculator__body {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -25,32 +28,41 @@
 </head>
 <body>
     <script>
+        function addToInput(value) {
+            document.getElementById('input').value += value;
+        }
+        function clearI() {
+            document.getElementById('input').value = ' ';
+        }
+        function calc() {
+            var input = document.getElementById('input').value;
+            var result = eval(input);
+            document.getElementById('input').value = result;
+        }
+        const result = document.querySelector('.calculator__header-result');
 
     </script>
     <div class="calculator">
         <div class="calculator__header">
-            <div class="calculator__header-result">
-
-            </div>
-            <input type="text" class="text">
+            <input type="text" class="text" id="input">
         </div>
         <div class="calculator__body">
-            <button class="button">7</button>
-            <button class="button">8</button>
-            <button class="button">9</button>
-            <button class="clear button">AC</button>
-            <button class="button">4</button>
-            <button class="button">5</button>
-            <button class="button">6</button>
-            <button class="add button">+</button>
-            <button class="button">1</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-            <button class="substract button">-</button>
-            <button class="mul button">*</button>
-            <button class="button">0</button>
-            <button class="divide button">/</button>
-            <button class="cal button">=</button>
+            <button class="button" onclick="addToInput('7')">7</button>
+            <button class="button" onclick="addToInput('8')">8</button>
+            <button class="button" onclick="addToInput('9')">9</button>
+            <button class="clear button" onclick="clearI()">AC</button>
+            <button class="button" onclick="addToInput('4')">4</button>
+            <button class="button" onclick="addToInput('5')">5</button>
+            <button class="button" onclick="addToInput('6')">6</button>
+            <button class="add button" onclick="addToInput('+')">+</button>
+            <button class="button" onclick="addToInput('1')">1</button>
+            <button class="button" onclick="addToInput('2')">2</button>
+            <button class="button" onclick="addToInput('3')">3</button>
+            <button class="substract button" onclick="addToInput('-')">-</button>
+            <button class="mul button" onclick="addToInput('*')">*</button>
+            <button class="button" onclick="addToInput('0')">0</button>
+            <button class="divide button" onclick="addToInput('/')">/</button>
+            <button class="cal button" onclick="calc()">=</button>
         </div>
     </div>
 </body>
