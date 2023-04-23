@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deCK</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="bootstrap/jquery/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <script>
+        // form validation using javascript
+        function checkID() {
+            var id = document.getElementById("id").value.trim();
+            var idPattern = /BN-\d{5}/g;
+            if (!idPattern.test(id)) {
+                iderror.innerText = "ID không hợp lệ";
+                return false;
+            }
+            return true;
+        }
+        function checkPass() {
+            var pass = document.getElementById("pass").value.trim();
+            var passPattern = /.{6,}/g;
+            if (!passPattern.test(pass)) {
+                passerror.innerText = "Mật khẩu không hợp lệ";
+                return false;
+            }
+            return true;
+        }
+        function checkDate() {
+            var today = new Date();
+            var date = new Date(document.getElementById("date").value);
+            if (date > today) {
+                dateerror.innerText = "Ngày không hợp lệ";
+                return false;
+            }
+            return true;
+        }
+        function validationForm() {
+            if (checkDate() && checkID() && checkPass()) {
+                return true;
+            }
+            alert("Đặt lịch thất bại");
+            return false;
+        }
+        // modal thì phải dùng window onload
+        window.onload = function() {
+            var btnSubmit = document.getElementById("btnSubmit");
+            btnSubmit.addEventListener("click", function() {
+                if (!validationForm()) {
+                    alert("Đặt lịch thất bại");
+                } 
+                else {
+                    var id = document.getElementById("id").value.trim();
+                    var pass = document.getElementById("pass").value.trim();
+                    var date = document.getElementById("date").value.trim();
+                    var dichvu = document.getElementsByName("dichvu[]");
+                    var dichvuChecked = [];
+                    for (var i = 0; i < dichvu.length; i++) {
+                        if (dichvu[i].checked) {
+                            dichvuChecked.push(dichvu[i].value);
+                        }
+                    }
+                    var chuyenkhoa = document.getElementById("chuyenkhoa").value;
+                    var table = document.getElementsByTagName("table")[0]; // lấy table đầu tiên, có thể thay thế bằng id
+                    var row = table.insertRow(-1); // chèn dòng mới vào cuối cùng
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+                    cell1.innerHTML = table.rows.length - 1; // trừ dòng header
+                    cell2.innerHTML = id;
+                    cell3.innerHTML = pass;
+                    cell4.innerHTML = date;
+                    cell5.innerHTML = dichvuChecked.join(", "); // nối các dịch vụ nếu tick từ 2 cái trở lên
+                    cell6.innerHTML = chuyenkhoa;
+                    alert("Đặt lịch thành công");
+                }
+            });
+        }
+        // Add data from modal to table
+
+        
+    </script>
+    <div class="main">
+        <header class="header">
+            <div class="banner">
+                <img src="hospital.jpg" alt="">
+            </div>
+            <nav class="navbar">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#" role="button" class="nav-link">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" role="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#dat-lich">Đặt lịch</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>ID</th>
+                    <th>Pass</th>
+                    <th>Ngày khám</th>
+                    <th>Dịch vụ</th>
+                    <th>Chuyên khoa</th>
+                </tr>
+
+            </thead>
+        </table>
+
+        <!-- modal -->
+        <div class="modal" id="dat-lich">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Đặt lịch</h3>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- form fill id, pass, date-->
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="id" class="form-label">ID</label>
+                                <input type="text" class="form-control" id="id" onkeyup=" return checkID()">
+                                <span id="iderror">(*)</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pass" class="form-label">Mật khẩu</label>
+                                <input type="password" class="form-control" id="pass" onblur="return checkPass()">
+                                <span id="passerror">(*)</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Ngày</label>
+                                <input type="date" class="form-control" id="date" onblur="return checkDate()">
+                                <span id="dateerror">(*)</span>
+                            </div>
+                            <!-- checkbox loại dịch vụ-->
+                            <div class="mb-3">
+                                <label class="form-label">Loại dịch vụ:</label>
+                                <br>
+
+                                <input type="checkbox" id="dichvu1" class="form-check-input" name="dichvu[]" value="Khám theo yêu cầu">
+                                <label for="dichvu1" class="form-label">Khám theo yêu cầu</label>
+                                
+                                <input type="checkbox" id="dichvu2" class="form-check-input" name="dichvu[]" value="Điều trị ngoại trú">
+                                <label for="dichvu2" class="form-label">Điều trị ngoại trú</label>
+                                
+                                <input type="checkbox" id="dichvu3" class="form-check-input" name="dichvu[]" value="Bác sĩ theo yêu cầu">
+                                <label for="dichvu3" class="form-label">Bác sĩ theo yêu cầu</label>    
+                            </div>
+                            <!-- combobox bệnh viện-->
+                            <div class="mb-3">
+                                <label for="chuyenkhoa" class="form-label">Chuyên khoa</label>
+                                <select class="form-select" id="chuyenkhoa">
+                                    <option value="Ngoại tổng quát">Ngoại tổng quát</option>
+                                    <option value="Nội tổng quát">Nội tổng quát</option>
+                                    <option value="nhi">nhi</option>
+                                </select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="btnSubmit">Đặt lịch</button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="">
+
+        </article>
+    </div>
+</body>
+</html>
